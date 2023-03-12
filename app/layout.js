@@ -1,4 +1,10 @@
+import { Inter, Roboto_Serif, Alegreya, Poppins } from 'next/font/google'
 import './globals.css'
+
+const inter = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '800'],
+})
 
 export const metadata = {
   title: 'Create Next App',
@@ -7,8 +13,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang='en' className={`${inter.className} h-full antialiased`}>
+      <body cz-shortcut-listen='true' className='flex h-full flex-col'>
+        {children}
+        <footer className='mt-32'></footer>
+      </body>
     </html>
   )
 }
